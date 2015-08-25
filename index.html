@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+        <div class="list-view"></div>
+        <div class="edit-view"></div>
+        
+        
+        <script type="text/template" class="wine-item">
+            <a href='#wines/<%= id %>'><%= name %></a>
+        </script>
+        
+        <script type="text/template" class="wine-edit">
+            <div class="form-left-col">
+                <label>Id:</label>
+                <input type="text" id="wineId" name="id" value="<%= id %>" disabled />
+                <label>Name:</label>
+                <input type="text" id="name" name="name" value="<%= name %>" required/>
+                <label>Grapes:</label>
+                <input type="text" id="grapes" name="grapes" value="<%= grapes %>"/>
+                <label>Country:</label>
+                <input type="text" id="country" name="country" value="<%= country %>"/>
+                <label>Region:</label>
+                <input type="text" id="region" name="region"  value="<%= region %>"/>
+                <label>Year:</label>
+                <input type="text" id="year" name="year"  value="<%= year %>"/>
+            </div>
+            <div class="form-right-col">
+                <img height="300" src="../pics/<%= picture %>"/>
+                <label>Notes:</label>
+                <textarea id="description" name="description"><%= description %></textarea>
+            </div>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone-min.js"></script>
+    </body>
+</html>
