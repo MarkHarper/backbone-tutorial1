@@ -31,12 +31,8 @@ var WineListItemView = Backbone.View.extend({
 	
 	tagName: "li",
 	
-	itemHTML: $('.wine-item'),
-	
-	itemTemplate: _.template(itemHTML),
-	
 	render: function () {
-		$(this.el).html(this.itemTemplate(this.model.toJSON()));
+		$(this.el).html(_.template($('.wine-item').html(),(this.model.toJSON())));
 		return this;
 	}
 		
@@ -46,12 +42,8 @@ var WineEdit = Backbone.View.extend({
 	
 	tagName: "div",
 	
-	editHTML: $('.wine-edit'),
-	
-	editTemplate: _.template(editTHML),
-	
 	render: function () {
-		$(this.el).html(this.editTemplate(this.model.toJSON()));
+		$(this.el).html(_.template($('.wine-edit').html(),this.model.toJSON()));
 		return this;
 	}
 	
